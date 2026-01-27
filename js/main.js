@@ -1,4 +1,5 @@
 import { getPhotos } from './data.js';
+import { renderCards } from './render-cards.js';
 
 const photos = getPhotos();
-console.log(photos);
+renderCards(photos);
