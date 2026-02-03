@@ -1,3 +1,5 @@
+import { openModal } from './modal.js';
+
 const template = document.querySelector('#picture').content.querySelector('.picture');
 const container = document.querySelector('.pictures');
 export const renderCards = (photos) => {
@@ -9,6 +11,10 @@ export const renderCards = (photos) => {
     newCard.querySelector('.picture__comments').textContent = photo.comments.length;
     newCard.querySelector('.picture__likes').textContent = photo.likes;
     image.alt = photo.description;
+    newCard.addEventListener('click', ()=>{
+      //call open modal function
+      openModal(photo);
+    })
     fragment.append(newCard);
   });
   container.append(fragment);

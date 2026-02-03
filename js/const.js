@@ -1,3 +1,5 @@
+export const PART_COMMENTS = 5;
+
 export const DESCRIPTIONS = [
   'Утро',
   'Машина',
