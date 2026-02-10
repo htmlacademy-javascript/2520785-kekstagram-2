@@ -1,3 +1,9 @@
+export const MAX_HASHTAGS = 5;
+
+export const HASHTAG_FORMULA = /^#[a-z0-9а-яё]{1,19}$/i;
+
+export const MAX_DESCRIPTION = 140;
+
 export const PART_COMMENTS = 5;
 
 export const DESCRIPTIONS = [
