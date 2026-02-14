@@ -1,4 +1,6 @@
 import { isValid, resetValidation } from './validation.js';
+import { resetScale } from './scale.js';
+import { resetEffects } from './effects.js';
 
 const formElement = document.querySelector('.img-upload__form');
 const uploadFileElement = formElement.querySelector('#upload-file');
@@ -18,18 +20,18 @@ const showModal = (isShown = true) => {
 
 const closeModal = () => {
   showModal(false);
-  //reset form
-  //reset validation
+  formElement.reset();
   resetValidation();
-  //reset scale
-  //reset effect
+  resetScale();
+  resetEffects();
 };
 
 uploadFileElement.addEventListener('change', () => {
   showModal();
 });
 
-buttonCloseElement.addEventListener('click', () => {
+buttonCloseElement.addEventListener('click', (evt) => {
+  evt.preventDefault();
   closeModal();
 });
 
