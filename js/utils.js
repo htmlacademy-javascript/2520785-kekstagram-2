@@ -1,8 +1,12 @@
-export const getRandomInteger = (a, b) => {
-  const lower = Math.ceil(Math.min(a, b));
-  const upper = Math.floor(Math.max(a, b));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
-};
+import { ALERT_TIME } from './const.js';
 
-export const getRandomElement = (items) => items[getRandomInteger(0, items.length - 1)];
+const alertTemplate = document.querySelector('#data-error').content.querySelector('.data-error');
+const body = document.body;
+
+export const showAlert = ()=>{
+  const alert = alertTemplate.cloneNode(true);
+  body.append(alert);
+  setTimeout(()=>{
+    alert.remove();
+  }, ALERT_TIME);
+};
