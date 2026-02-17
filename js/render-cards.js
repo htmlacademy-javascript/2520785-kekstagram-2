@@ -5,9 +5,16 @@ const container = document.querySelector('.pictures');
 
 let localPhotos;
 
+const clear = () => {
+  document.querySelectorAll('.picture').forEach((card) => {
+    card.remove();
+  });
+};
+
 export const renderCards = (photos) => {
+  clear();
   localPhotos = [...photos];
-  const fragment = document.createDocumentFragment('');
+  const fragment = document.createDocumentFragment();
   photos.forEach((photo) => {
     const newCard = template.cloneNode(true);
     const image = newCard.querySelector('.picture__img');
@@ -21,7 +28,7 @@ export const renderCards = (photos) => {
   container.append(fragment);
 };
 
-container.addEventListener('click', (evt)=>{
+container.addEventListener('click', (evt) => {
   const card = evt.target.closest('.picture');
   if (card) {
     const currentId = Number(card.dataset.photoId);

@@ -1,3 +1,9 @@
+export const Filters = {
+  DEFAULT: 'filter-default',
+  RANDOM: 'filter-random',
+  DISCUSSED: 'filter-discussed',
+};
+
 export const Popups = {
   SUCCESS: 'success',
   ERROR: 'error',
