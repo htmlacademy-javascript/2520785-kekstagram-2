@@ -1,4 +1,5 @@
 import { PART_COMMENTS } from './const.js';
+import { removeEscapeControl, setEscapeControl } from './escape-control.js';
 
 const modalElement = document.querySelector('.big-picture');
 const closeButtonElement = modalElement.querySelector('#picture-cancel');
@@ -64,10 +65,14 @@ const render = (picture) => {
 export const openModal = (photo) => {
   showModal();
   render(photo);
+  setEscapeControl(() => {
+    showModal(false);
+  });
 };
 
 closeButtonElement.addEventListener('click', () => {
   showModal(false);
+  removeEscapeControl();
 });
 
 loaderElement.addEventListener('click', () => {
