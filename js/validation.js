@@ -13,11 +13,6 @@ const validation = new Pristine(formElement, {
 
 const checkDescription = (value) => value.length <= MAX_DESCRIPTION;
 
-validation.addValidator(
-  descriptionElement,
-  checkDescription,
-  `Строка не должна привышать ${MAX_DESCRIPTION} символов`
-);
 const getHashtags = (text) => text.toLowerCase().split(' ').filter((item) => item.length);
 
 const checkHashtag = (value) => {
@@ -46,6 +41,12 @@ const checkUnique = (value) => {
 };
 
 validation.addValidator(
+  descriptionElement,
+  checkDescription,
+  `Строка не должна привышать ${MAX_DESCRIPTION} символов`
+);
+
+validation.addValidator(
   hashtagElement,
   checkHashtag,
   'Не валидный хештег'
@@ -62,5 +63,6 @@ validation.addValidator(
   checkUnique,
   'Хештеги не должны повторяться'
 );
+
 export const isValid = () => validation.validate();
 export const resetValidation = () => validation.reset();

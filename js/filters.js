@@ -4,6 +4,7 @@ import { debounce } from './utils.js';
 
 const filterElement = document.querySelector('.img-filters');
 const formElement = document.querySelector('.img-filters__form');
+
 let localPhotos;
 
 const debouncedRender = debounce(renderCards);

@@ -38,7 +38,7 @@ const showSlider = (isVisible = true) => {
   } else {
     containerElement.classList.add('hidden');
   }
-}
+};
 
 export const resetEffects = () => {
   showSlider(false);

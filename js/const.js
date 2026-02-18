@@ -105,7 +105,7 @@ export const Scale = {
   MIN: 25,
   STEP: 25,
   DEFAULT: 100,
-}
+};
 
 export const MAX_HASHTAGS = 5;
 
